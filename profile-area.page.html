@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button color="light" (click)="goBack()">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    <ion-title>profile-area</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]= "url + 'fichier_commun/images/' + user.ImageProfil" alt="">
+
+    <ion-list>
+                
+        <ion-item [routerDirection]="'root'" [routerLink]>
+         <ion-icon name='user'></ion-icon>
+         <ion-label>
+           <h1 id='name'>{{ user.Prenom }} {{ user.Nom}}</h1>
+         </ion-label>
+        </ion-item>
+
+         <ion-item [routerDirection]="'root'" [routerLink]>
+         <ion-icon name='home'></ion-icon>
+           <ion-label>
+              &nbsp;&nbsp;{{user.Residence}}
+           </ion-label>
+        </ion-item>
+
+        <ion-item [routerDirection]="'root'" [routerLink]>
+          <ion-icon name='call'></ion-icon>
+            <ion-label>
+               &nbsp;&nbsp;{{user.Contact}}
+            </ion-label>
+         </ion-item>
+
+   </ion-list>
+   <ion-fab-button *ngIf='!(user.Login === userInfo.info.login)' (click)='toChatRoom(user.Prenom + " " + user.Nom)'>
+      <ion-icon name="chatboxes"></ion-icon>
+    </ion-fab-button>
+  </ion-card>
+
+</ion-content>

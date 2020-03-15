@@ -1,0 +1,97 @@
+
+ion-content.background{
+  --background: url(../../assets/icon/plateau.jpg) 0 0/100% 100% no-repeat;
+}
+
+ion-button.trajet{
+  --color:white;
+  --border-color:white;
+  --border-width:1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  position: relative;
+  top: 100px;
+  left:50px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  text-transform: capitalize;
+  width: 80%;
+}
+
+#initial{
+  font-size: 3em;
+}
+
+#speech {
+--color:white;
+position: absolute;
+right: 23%;
+top: 10%;
+}
+
+ion-toolbar ion-icon.chat{
+  font-size: 1.8em;
+  position: absolute;
+  right:20px;
+  top:17px;
+}
+
+ion-toolbar ion-badge.chat{
+  font-size: 0.7em;
+  position: absolute;
+  right:19px;
+  top:17px;
+}
+
+ion-toolbar ion-icon.notif{
+  font-size: 1.8em;
+  position: absolute;
+  right:70px;
+  top:17px;
+}
+
+ion-toolbar ion-badge.notif{
+  font-size: 0.7em;
+  position: absolute;
+  right:69px;
+  top:17px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    position: relative;
+      top: 90px;
+      left: 0px;
+  }
+  to {
+    opacity: 1;
+    position: relative;
+      top: 0px;
+      left: 0px;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  color: white;
+  font-family: Verdana,Tahoma, sans-serif;
+  font-size: 25px;
+}
+
+.white {
+ color: white;
+}
+
+.orange {
+  color: orange;
+ }
+
+.orange1 {
+  color: rgb(245, 111, 2);
+}
+
+.orange2 {
+  color: rgb(250, 178, 45);
+}

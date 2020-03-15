@@ -1,0 +1,116 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button color="light" (click)="goBack()">
+              <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+      <ion-title>Recherche de Trajet</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div *ngIf="noResult">
+       <p>Aucun voyage ne repond pour l'instant à votre requête. <br>
+        cliquez sur ce bouton pour recevoir une notification dès qu'un voyage semblable est disponible. <br>
+        n'oublier pas de bien spécifier le depart et la destination dans le formulaire ci-dessous</p>
+      <ion-button fill='outline' (click)='notification()'>
+        recevoir une notification
+      </ion-button>
+    </div>
+    <ion-slides scrollbar='true'>
+      <ion-slide *ngFor='let elm of displayedTravels; let i = index'>
+          <ion-card class="CardFadeIn" (click)='toInfoTravel(i)'>
+             <!-- manageUrl = 'http://www.ivoiturage.com/server/towns/';-->
+
+              <img [src]="'http://localhost/dream/server/towns/' + elm.Destination + '.jpg'" alt=""/>
+        
+              <ion-list>
+                  
+                     <ion-item>
+                        <ion-icon name='pin'></ion-icon>
+                      <ion-label>
+                        {{elm.Depart}} ({{&nbsp; elm.Rencontre}})
+                      </ion-label>
+                    </ion-item>
+        
+                      <ion-item>
+                          <ion-icon name='locate'></ion-icon>
+                        <ion-label>
+                          {{elm.Destination}} ({{&nbsp; elm.Depot}})
+                        </ion-label>
+                    </ion-item>
+
+                      <ion-item >
+                         <ion-item>
+                          <ion-icon name='time'></ion-icon>
+                          <ion-label>
+                            {{elm.Date &nbsp;}}&nbsp;à&nbsp;{{&nbsp;elm.Heure}}
+                          </ion-label> 
+                         </ion-item>   
+                    </ion-item>
+
+                    <ion-item>
+
+                      <ion-item>
+                        <ion-icon name='people'></ion-icon>
+                        <ion-label>
+                          {{elm.NbPlaceDispo}}
+                        </ion-label>
+                      </ion-item>
+
+                      <ion-item>                     
+                        <ion-icon  name='cash'></ion-icon>
+                        <ion-label>
+                         {{elm.Prix}} fcfa
+                        </ion-label>
+                      </ion-item>
+
+                    </ion-item>
+
+            
+        
+                </ion-list>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+    <form>
+
+        <ion-item>
+            <ion-label>Depart</ion-label>
+            <ion-select interface="popover" name='depart' [(ngModel)]='depart' (ionChange)='updateTravelsList()'>
+              <ion-select-option value="yopougon">yopougon</ion-select-option>
+              <ion-select-option value="II-plateau">II-plateau</ion-select-option>
+              <ion-select-option value="angre">angre</ion-select-option>
+              <ion-select-option value="riviera">riviera</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+            <ion-item>
+              <ion-label>Date</ion-label>
+              <ion-datetime  [value]="myDate" [min]="myDate"
+                [dayShortNames]="dayShortNames"
+                displayFormat="DDD, DD MMM YYYY"
+                [monthShortNames]="monthShortNames"
+                (ionChange)="updateTravelsList()"
+                [(ngModel)]='date'
+                name='date'></ion-datetime>
+            </ion-item>
+  
+              <ion-item class='destination'>
+                  <ion-label>Destination</ion-label>
+                  <ion-select interface="popover" name='destination' [(ngModel)]='destination'  (ionChange)='updateTravelsList()'>
+                    <ion-select-option value="yopougon">yopougon</ion-select-option>
+                    <ion-select-option value="II-plateau">II-plateau</ion-select-option>
+                    <ion-select-option value="angre">angre</ion-select-option>
+                    <ion-select-option value="riviera">riviera</ion-select-option>
+                  </ion-select>
+                </ion-item> 
+                <ion-fab>
+                    <ion-fab-button (click)='clearInput()'>
+                      <ion-icon name="close-circle"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>       
+    </form>
+  </ion-content>

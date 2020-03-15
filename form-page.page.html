@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> <ion-icon  slot="start" name='add-circle'></ion-icon>  
+                Proposer Un Trajet 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        
+                <ion-item-group>
+                    <ion-item-divider>
+                        <ion-label></ion-label>
+                      </ion-item-divider>
+                    <ion-item>
+                        <ion-icon name='pin'></ion-icon>
+                        <ion-label>Depart</ion-label>
+                        <ion-select interface="popover" formControlName="Depart">
+                          <ion-select-option value="yopougon">yopougon</ion-select-option>
+                          <ion-select-option value="II-plateau">II-plateau</ion-select-option>
+                          <ion-select-option value="angre">angre</ion-select-option>
+                          <ion-select-option value="riviera">riviera</ion-select-option>
+                          <ion-select-option value="marcory">marcory</ion-select-option>
+                          <ion-select-option value="adjame">adjame</ion-select-option>
+                          <ion-select-option value="plateau">plateau</ion-select-option>
+                          <ion-select-option value="koumassi">koumassi</ion-select-option>
+                          <ion-select-option value="abobo">abobo</ion-select-option>
+                          <ion-select-option value="bingerville">bingerville</ion-select-option>
+                          <ion-select-option value="bingerville">bingerville</ion-select-option>
+
+
+
+                          
+                        </ion-select>
+                      </ion-item>
+      
+                      <ion-item>
+                          <ion-input formControlName='Rencontre' placeholder="Point De Rencontre" clearInput></ion-input>
+                      </ion-item>
+                </ion-item-group>  
+
+                  <ion-item-group>
+                      <ion-item-divider>
+                          <ion-label></ion-label>
+                        </ion-item-divider>
+                      <ion-item>
+                        <ion-icon name='locate' ></ion-icon> 
+                          <ion-label>Destination</ion-label>
+                          <ion-select  interface="popover" formControlName='Destination'>
+                            <ion-select-option value="yopougon">yopougon</ion-select-option>
+                            <ion-select-option value="II-plateau">II-plateau</ion-select-option>
+                            <ion-select-option value="angre">angre</ion-select-option>
+                            <ion-select-option value="riviera">riviera</ion-select-option>
+                            <ion-select-option value="marcory">marcory</ion-select-option>
+                            <ion-select-option value="adjame">adjame</ion-select-option>
+                            <ion-select-option value="plateau">plateau</ion-select-option>
+                            <ion-select-option value="koumassi">koumassi</ion-select-option>
+                            <ion-select-option value="abobo">abobo</ion-select-option>
+                            <ion-select-option value="bingerville">bingerville</ion-select-option>
+                            <ion-select-option value="bingerville">bingerville</ion-select-option>
+                          </ion-select>
+                        </ion-item>
+      
+                        <ion-item>
+                            <ion-input formControlName='Depot' placeholder='Point de Depot' clearInput></ion-input>
+                        </ion-item>
+                  </ion-item-group>
+
+                  <ion-item>
+                      <ion-label>Date</ion-label>
+                      <ion-datetime [value]="myDate" [min]="myDate"
+                        [dayShortNames]="dayShortNames"
+                        displayFormat="DDD, DD MMM YYYY à HH:mm"
+                        [monthShortNames]="monthShortNames"
+                        formControlName='Date'>
+                      </ion-datetime>
+                  </ion-item>
+
+                      <p *ngIf='error'> Veuillez remplir la totalité des Champs</p>
+
+                      <ion-grid>
+                        <ion-row>
+                          <ion-col>
+                            <ion-button size='block' fill='outline' color='white' (click)='cancel()'>
+                              Annuler
+                            </ion-button>
+                          </ion-col>
+                          
+                          <ion-col>
+                              <ion-button size='block' fill='full' color='white' type='submit'>
+                                Suivant
+                              </ion-button>
+                            </ion-col>
+                        </ion-row>
+                      </ion-grid>
+                        
+
+    </form>
+</ion-content>

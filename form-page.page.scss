@@ -1,0 +1,37 @@
+
+
+ion-item{
+    margin:5px;
+}
+
+ion-button{
+    --border-width:1px;
+    color: rgb(235, 133, 0);
+    border-color: rgb(235, 133, 0);
+}
+
+ion-content{
+    --ion-background-color:white;
+}
+
+p {
+    color: red;
+}
+
+ion-icon {
+    color: rgb(235, 133, 0);
+}
+
+form {
+    margin-left: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+ion-item{
+
+    --highlight-color-valid: rgb(235, 133, 0);
+  --highlight-color-invalid: transparent;
+  --highlight-color-focused: rgb(235, 133, 0);
+
+}

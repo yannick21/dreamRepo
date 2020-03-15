@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button color="light" (click)="goBack()">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    <ion-title>Liste de vos Anciens Trajets</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-slides scrollbar='true'>
+      <p *ngIf='noItem'>Vous n'avez effectué aucun voyage pour le moment</p>
+    <ion-slide *ngFor='let elm of mta; let i = index' (click)=showPartners(i)>
+        <ion-card class="CardFadeIn">
+          <img [src]="'../../assets/icon/'  + elm.Destination + '.jpg'" alt=""/>
+      
+            <ion-list>
+                
+                   <ion-item [routerDirection]="'root'" [routerLink]>
+                    <ion-icon name='pin'></ion-icon>
+                    <ion-label>
+                      {{elm.Depart}}
+                    </ion-label>
+      
+                    <ion-icon name='locate'></ion-icon>
+                      <ion-label>
+                        {{elm.Destination}}
+                      </ion-label>
+                   </ion-item>
+      
+                   <ion-item [routerDirection]="'root'" [routerLink]>
+                      <ion-icon name='people'></ion-icon>
+                      <ion-label>
+                        {{elm.NbPlaceDispo}}/{{elm.NbPlace}}
+                      </ion-label>
+      
+                      <ion-icon  name='cash'></ion-icon>
+                      <ion-label>
+                        {{elm.Prix}} fcfa
+                      </ion-label>
+                    </ion-item>
+
+                      <ion-item [routerDirection]="'root'" [routerLink] id="date">
+                        <ion-icon name='time'></ion-icon>
+                          <ion-label>
+                            {{elm.Date }} à {{ elm.Heure}}
+                          </ion-label>
+                      </ion-item>
+      
+              </ion-list>
+      </ion-card>
+      
+    </ion-slide>
+  </ion-slides>
+  
+</ion-content>
+
+

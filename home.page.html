@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Accueil 
+    </ion-title>
+    <ion-button shape='round'
+                (click)="toSpeech()"
+                fill = 'clear'
+                icon-only
+                id='speech'>
+                <ion-icon slot="icon-only" name='mic'></ion-icon>
+    </ion-button>
+    <ion-icon class='chat' name="chatboxes" (click)="showChatsPopover($event)" ></ion-icon>
+    <ion-badge *ngIf='chatsNumber > 0' #chat class='chat' [color]="color2">{{chatsNumber}}</ion-badge>
+
+    <ion-icon class='notif' name="notifications" (click)="showNotificationsPopover($event)"></ion-icon>
+    <ion-badge  *ngIf='notificationsNumber > 0' #notif class='notif' [color]="color">{{notificationsNumber}}</ion-badge> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background">
+   <p *ngIf="name"  class="fadeIn"><span [class]='welcomeColor' id='initial'>{{welcomeArray[0].initial}}</span>                       {{welcomeArray[0].rest }} <span id="initial"  [class]='welcomeColor'>{{name.substr(0, 1)}}</span>{{name.substr(1, name.length)}} </p>
+
+    <ion-button class='trajet '  fill="outline" (click)='toFormPage()'>Proposer un trajet
+        <ion-icon  slot="start" name='add-circle'></ion-icon>   
+        <ion-ripple-effect></ion-ripple-effect>                                                  
+    </ion-button>
+
+    <ion-button ion-start class='trajet' fill="outline" (click)='toTravelsResearch()'>Rechercher un trajet
+        <ion-icon  slot="start" name='search'></ion-icon>  
+        <ion-ripple-effect></ion-ripple-effect>
+    </ion-button>
+ 
+</ion-content>
+
+<ion-footer>

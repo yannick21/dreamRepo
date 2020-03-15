@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>notifications</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+      <ion-list>
+        <ion-item class="readOrNot" *ngFor="let notification of notificationsArray; let i = index"
+                   [routerLink]
+                   (click)='dismiss(i)'>                
+              <ion-item>
+
+                <ion-avatar item-start>
+                    <img src="../../assets/icon/Ivoiturage.jpg">
+                </ion-avatar>
+
+                <ion-label>
+                  {{notification.message}}
+                </ion-label>
+
+              </ion-item>
+
+              <ion-label id="date">
+                {{notification.time}}
+              </ion-label>
+        </ion-item>
+      </ion-list>
+  </div>
+
+</ion-content>

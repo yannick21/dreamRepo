@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>chats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+      <ion-list>
+        <ion-item class="readOrNot" *ngFor="let chat of chatsArray; let i = index"
+                   [routerLink]
+                   (click)='read(i)'>                
+              <ion-item>
+
+                <ion-avatar item-start>
+                    <!--'http://www.ivoiturage.com/server/manage-data.php';-->
+                    <img [src]="'http://localhost/Ivoiturage2.optimax.net/ivoiturage2/avatar/' + chat.ImageProfil">
+                </ion-avatar>
+
+                <ion-label>
+                  {{chat.Message}}
+                </ion-label>
+
+              </ion-item>
+
+            <ion-item>
+            <ion-label id="date">
+                {{chat.Date}}
+              </ion-label>
+            </ion-item>
+              
+        </ion-item>
+      </ion-list>
+  </div>
+
+</ion-content>

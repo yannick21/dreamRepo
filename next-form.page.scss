@@ -1,0 +1,40 @@
+#ionRange{
+    --bar-background: rgb(2, 28, 85);
+    --knob-background: rgb(2, 28, 85);
+}
+
+ion-range ion-label{
+    font-size: 1.5em;
+}
+
+form{
+    margin-top: 20%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+p {
+    color: red;
+}
+
+ion-item{
+    margin:5px;
+}
+
+ion-button{
+    --border-width:1px;
+    color: rgb(235, 133, 0);
+    border-color: rgb(235, 133, 0);
+}
+
+ion-content{
+    --ion-background-color:white;
+}
+
+ion-item{
+
+    --highlight-color-valid: rgb(235, 133, 0);
+  --highlight-color-invalid: transparent;
+  --highlight-color-focused: rgb(235, 133, 0);
+
+}

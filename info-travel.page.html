@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button color="light" (click)="goBack()">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      <ion-title>
+        <ion-icon name='pin' ></ion-icon> {{departure}} <br>
+        <ion-icon name='locate' ></ion-icon> {{destination}}
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<agm-map #map id='map'
+    [latitude]='getCoords().lat'
+    [longitude]='getCoords().lng'
+    [zoom]='zoom'>
+
+</agm-map>
+
+  <ion-button *ngIf='!(travel.LoginConducteur === userInfo.info.login)' expand='block' fill='outline' class='CardFadeIn' (click)='bookIn()'>
+    <ion-icon name='sign'></ion-icon>
+      Reserver
+</ion-button>
+
+   
+  <ion-title id='title'>Ivoitureurs sur le même trajet</ion-title>
+
+  <ion-list >
+          <ion-item [routerLink] *ngFor='let r of reservationsArray'>
+              <ion-avatar>
+                  <img [src]="r.ImageProfil">
+  
+                </ion-avatar>           
+              <ion-label>
+                  <h2 >{{r.Nom }} {{ r.Prenom}}</h2><br>
+                  <p> {{r.Message}}</p>
+              </ion-label>
+
+          </ion-item>
+
+    </ion-list>
+
+</ion-content>

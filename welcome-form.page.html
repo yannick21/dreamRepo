@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>welcome-form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+        <form [formGroup]="form" (ngSubmit)="submit()">
+                <div class="form-group">
+                  <label >Adresse Email</label>
+                  <ion-input formControlName="login"   type="email" placeholder="Login" (ionChange)='cleanError()'></ion-input>
+                    <br> <br>
+                  <label >Mot de passe (creez-en un si vous êtes un nouvel utilisateur)</label>
+                  <ion-input formControlName="password" type="password" (ionChange)='cleanError()' placeholder="Password"> </ion-input>
+                </div>
+                <br>
+                <ion-button type='submit'>
+                    Suivant
+                </ion-button>
+
+                <p *ngIf='error'>veuillez bien remplir les champs</p>
+                <p *ngIf='alreadyUsedEmailError'>cet Email est déja utiisé. si c'est le votre, veuillez entrer un mot de passe correct</p>
+        </form>
+
+</ion-content>

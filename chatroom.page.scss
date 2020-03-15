@@ -1,0 +1,71 @@
+ion-content {
+    --background: white;
+}
+
+.blue {
+    background-color: rgb(30, 90, 219);
+    --background: rgb(30, 90, 219);
+    margin-left: 15%;
+}
+
+.orange {
+    background-color:  rgb(235, 133, 0);
+    --background:  rgb(235, 133, 0);
+    margin-right: 15%;
+}
+
+.meAgain {
+    margin-top: 1%;
+    background-color:rgb(30, 90, 219);
+    --background: rgb(30, 90, 219);
+    margin-left: 15%;
+}
+
+.hisAgain {
+    margin-top: 1%;
+    background-color:  rgb(235, 133, 0);
+    --background:  rgb(235, 133, 0);
+    margin-right: 15%;
+}
+
+img {
+    height: 20%;
+    width: 20%;
+    border-radius: 50%;
+}
+
+ion-card {
+    margin-top: 10%;
+    min-height: 7%;
+    color: white;
+    font-weight: 100;
+    padding: 2%;
+    padding-bottom: 0%;
+    font-weight: 100;
+}
+
+#time {
+ margin: 0%;
+ color: white;
+ margin-left: 85%;
+ font-size: 1em;
+}
+
+
+ion-label {
+    color: white;
+}
+
+ion-item {
+    border-radius: 20%;
+    margin-left: 5%;
+    width:80%;
+    --highlight-color-valid: rgb(235, 133, 0);
+  --highlight-color-invalid: transparent;
+  --highlight-color-focused: rgb(235, 133, 0);
+}
+
+ion-fab-button {
+    position: relative;
+    z-index: 999;
+}

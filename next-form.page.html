@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button color="light" (click)="goBack()">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    <ion-title>next-form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form  [formGroup]="form" (ngSubmit)="submit()">
+      <ion-item>
+        <ion-label>Nombre de Places</ion-label><br>
+        <ion-range (ionChange) = price() formControlName='NbPlace' min="0" max="10" pin="true" id="ionRange" >
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">10</ion-label>
+        </ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)]="participation" [disabled] = "true" formControlName='Prix' placeholder='prix de la place' clearInput></ion-input>    
+      </ion-item>
+      <p *ngIf='error'> Veuillez remplir la totalité des Champs</p>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button size='block' fill='outline' color='white' (click)='cancel()'>
+              Annuler
+            </ion-button>
+          </ion-col>
+          
+          <ion-col>
+              <ion-button size='block' fill='outline' color='white' type='submit'>
+                Suivant
+              </ion-button>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+
+</ion-content>

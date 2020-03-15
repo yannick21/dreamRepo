@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button color="light" (click)="goBack()">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    <ion-title>see-notifications</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="FadeIn">
+    <h2>{{title}}</h2>
+    <p>{{msg}}</p>
+    <ion-button *ngIf='isGeoNotif' (click)='toGeolocationArea()'>
+      <ion-icon slot='end' name='pin'></ion-icon>
+      ok
+    </ion-button>
+  </ion-card>
+</ion-content>

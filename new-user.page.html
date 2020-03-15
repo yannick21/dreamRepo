@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>new-user</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment scrollable>
+  <ion-segment-button [checked]="f1" (click)="toForm1()">
+      <ion-icon name="person"></ion-icon>
+    <ion-label>Informations <br> Personnelles</ion-label>
+  </ion-segment-button>
+
+  <ion-segment-button  [disabled]="!a2" [checked]="f2" (click)="toForm2()">
+      <ion-icon name="call"></ion-icon>
+    <ion-label>Coordonnées<br></ion-label>
+  </ion-segment-button>
+
+  <ion-segment-button  [disabled]="!a3" [checked]="f3" (click)="toForm3()">
+      <ion-icon name="logo-model-s"></ion-icon>
+      <ion-label>Informations <br> sur la voiture</ion-label>
+  </ion-segment-button>
+</ion-segment>
+ <form *ngIf="f1" [formGroup]="form1" (ngSubmit)="submit1()">
+    <div>
+      <label >Nom</label>
+      <ion-item>
+          <ion-input formControlName="firstName"  placeholder="Nom" (ionChange)='cleanError()'></ion-input>
+      </ion-item>
+      <label >Prenom</label>
+      <ion-item>
+          <ion-input formControlName="lastName" (ionChange)='cleanError()' placeholder="Prenom"> </ion-input>
+      </ion-item>
+    </div>
+    <p *ngIf='error'>veuillez bien remplir les champs</p>
+    <br>
+    <ion-button type='submit' [disabled]='error'>
+        Suivant
+    </ion-button>
+ </form>
+
+
+ <form *ngIf="f2" [formGroup]="form2" (ngSubmit)="submit2()">
+    <div>
+     <label >Residence</label>
+      <ion-item>
+          <ion-input formControlName="residence" (ionChange)='cleanError()' placeholder="Residence"> </ion-input>
+      </ion-item>
+
+      <label >Contact</label>
+      <ion-item>
+          <ion-input formControlName="contact" (ionChange)='cleanError()' placeholder="Contact"> </ion-input>
+      </ion-item>
+    </div>
+    <p *ngIf='error'>veuillez bien remplir les champs</p>
+    <ion-button type='submit' [disabled]='error'>
+        Suivant
+    </ion-button>
+ </form>
+
+
+ <form *ngIf="f3" [formGroup]="form3" (ngSubmit)="submit3()">
+    <div>
+      <label >Marque</label>
+      <ion-item>
+          <ion-input formControlName="marque" (ionChange)='cleanError()' placeholder="Marque"> </ion-input>
+      </ion-item>
+      <label >Couleur</label>
+      <ion-item>
+          <ion-input formControlName="color" (ionChange)='cleanError()' placeholder="Couleur"> </ion-input>
+      </ion-item>
+
+      <label >Immatriculation</label>
+      <ion-item>
+          <ion-input formControlName="imm" (ionChange)='cleanError()' placeholder="Immatriculation"> </ion-input>
+      </ion-item>
+    </div>
+    <br>
+    <p *ngIf='error'>veuillez bien remplir les champs</p>
+  <br>
+  <br>
+  <br>
+    <ion-button type='submit' [disabled]='error'>
+        soumettre
+    </ion-button>
+ </form>
+</ion-content>

@@ -1,0 +1,26 @@
+ion-content{
+    --background: url(../../assets/icon/plateau.jpg) 0 0/100% 100% no-repeat;
+}
+
+#first{
+    margin-top: 40%;
+}
+
+form {
+    color: white;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+ion-input {
+    height: 5%;
+}
+
+ion-button{
+    --background: rgb(235, 133, 0);
+    color: white;
+}
+
+p{
+    color: red;
+}

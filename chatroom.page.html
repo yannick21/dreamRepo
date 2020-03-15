@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button color="light" (click)="goBack()">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    <ion-title>Discussion avec {{ hisName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <ion-card *ngFor="let message of messagesArray; let i = index"
+              [ngClass]="{'blue': message.mode === 'sent',
+                          'orange': message.mode === 'received',
+                          'meAgain': message.mode === 'meAgain',
+                          'hisAgain': message.mode === 'hisAgain'}">
+
+                            {{message.msg}}
+                            <p id='time'>{{message.time}}</p>
+    </ion-card>
+
+
+  <form (ngSubmit)='sendMessage()'>
+      <ion-item>
+          <ion-input name='input' [(ngModel)]='Input'>
+            </ion-input>
+      </ion-item>
+
+      <ion-fab horizontal='end'>
+          <ion-fab-button (click)='sendMessage()'>
+              <ion-icon name='send'></ion-icon>
+          </ion-fab-button>
+      </ion-fab>
+  </form>
+
+</ion-content>

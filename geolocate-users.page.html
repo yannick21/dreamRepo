@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button color="light" (click)="goBack()">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    <ion-title>geolocate-users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <agm-map #map id='map'
+           [latitude]='latitude'
+           [longitude]='longitude'
+           (mapClick)='onMapClicked($event)'
+           [zoom]='zoom'>
+
+           <!--agm-marker *ngIf='myMarker'
+                        [latitude]='myMarker.latitude'
+                        [longitude]='myMarker.longitude'
+                        [label]="myLabel">
+
+           </agm-marker-->
+
+           <agm-marker *ngFor='let marker of markersArray; let i = index'
+                        [latitude]='marker.latitude'
+                        [longitude]='marker.longitude'
+                        [label]="markersArray[i].label">
+
+           </agm-marker>
+
+  </agm-map>
+</ion-content>

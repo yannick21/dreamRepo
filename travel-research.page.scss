@@ -1,0 +1,74 @@
+ion-card{
+  height: 650px;
+  width: 100%;  
+}
+
+ion-card ion-icon{
+  color:rgb(2, 28, 85);
+}
+
+ion-button{
+  --color:white;
+  --border-color:white;
+  --border-width:1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  text-transform: capitalize;
+  width: 80%;
+}
+
+p {
+  color: white;
+}
+
+ion-card img{
+  height: 70%;
+  width: 100%;
+}
+
+.destination{
+  margin-bottom: 2%;
+}
+
+ion-toolbar ion-icon{
+  font-size: 2.0em;
+  margin-right: 20%;
+}
+
+form ion-item{
+  margin-right: 1%;
+  margin-left: 1%;
+
+} 
+
+form{
+  margin-top: 30%;
+  width: 100%;
+}
+
+.red {
+  color: red;
+}
+
+
+
+
+@keyframes CardFadeIn {
+  from {
+    opacity: 0;
+    position: relative;
+    bottom: -300px;
+  }
+
+  to {
+    opacity: 1;
+    position: relative;
+    bottom: 0;
+  }
+}
+
+.CardFadeIn {
+  animation-name: CardFadeIn;
+  animation-duration: 1.5s;
+}

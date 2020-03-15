@@ -1,0 +1,30 @@
+ion-toolbar{
+    --ion-toolbar-background: white;
+    --ion-toolbar-color:rgb(235, 133, 0);
+}
+
+.grey{
+    background-color: grey;
+    color: grey
+}
+
+.white{
+    background-color: white;
+    color: white;
+}
+
+.read{
+    opacity: 0.1;
+}
+
+.notRead{
+    opacity: 1;
+}
+
+#date{
+    font-size: 0.7em;
+    color: grey;
+    position: relative;
+    bottom: 0%;
+    right: 0%;
+}

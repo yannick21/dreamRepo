@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button color="light" (click)="goBack()">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    <ion-title>Liste de vos Prochains Trajets</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-slides scrollbar='true'>
+      <p *ngIf='noItem'>Vous n'avez aucun voyage à effectuer pour le moment</p>
+    <ion-slide *ngFor='let elm of tsa; let i = index' (click)=showPartners(i)>
+        <ion-card class="CardFadeIn">
+          <img [src]="'http://localhost/dream/server/towns/' + elm.Destination + '.jpg'" alt=""/>
+      
+          <ion-list>
+                  
+            <ion-item>
+               <ion-icon name='pin'></ion-icon>
+             <ion-label>
+               {{elm.Depart}} ({{&nbsp; elm.Rencontre}})
+             </ion-label>
+           </ion-item>
+
+             <ion-item>
+                 <ion-icon name='locate'></ion-icon>
+               <ion-label>
+                 {{elm.Destination}} ({{&nbsp; elm.Depot}})
+               </ion-label>
+           </ion-item>
+
+             <ion-item >
+                <ion-item>
+                 <ion-icon name='time'></ion-icon>
+                 <ion-label>
+                   {{elm.Date &nbsp;}}&nbsp;à&nbsp;{{&nbsp;elm.Heure}}
+                 </ion-label> 
+                </ion-item>   
+           </ion-item>
+
+           <ion-item>
+
+             <ion-item>
+               <ion-icon name='people'></ion-icon>
+               <ion-label>
+                 {{elm.NbPlaceDispo}}
+               </ion-label>
+             </ion-item>
+
+             <ion-item>                     
+               <ion-icon  name='cash'></ion-icon>
+               <ion-label>
+                {{elm.Prix}} fcfa
+               </ion-label>
+             </ion-item>
+
+           </ion-item>
+
+   
+
+       </ion-list>
+      </ion-card>
+      
+    </ion-slide>
+  </ion-slides>
+  
+</ion-content>
+
+
